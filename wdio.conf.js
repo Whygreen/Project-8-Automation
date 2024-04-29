@@ -7,7 +7,7 @@ exports.config = {
         // 'path/to/excluded/files'
     ],
     maxInstances: 10,
-    headless: true,
+    headless: false,
     capabilities: [
         {
         maxInstances: 5,
@@ -22,13 +22,13 @@ exports.config = {
         browserName: 'firefox',
         acceptInsecureCerts: true,
         'moz:firefoxOptions': {
-            args: ['-headless']
+            args: []
         }
     }
 ],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://e629ed6b-4969-442b-987e-087e81eb10ca.serverhub.practicum-services.com',
+    baseUrl: 'https://cnt-70044431-9b5f-47ce-bc3c-ff37317d0b85.containerhub.tripleten-services.com',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
