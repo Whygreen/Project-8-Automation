@@ -11,17 +11,19 @@ module.exports = {
     confirmButton: 'button=Confirm',
     // Modals
     phoneNumberModal: '.modal',
+    creditCardModalHelp: '.modal',
+    creditCardFill: '.modal.unusual',
     // Functions
     selectCarType: '//div[contains(text(), "Supportive")]',
     paymentMethodButton: '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.pp-button.filled > div.pp-text',
     addCardButton1:  '//div[contains(text(), "Add card")]',
     cardNumberField: '#number',
     codeNumberField: '#code.card-input',
-    toggleButton1: '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body > div:nth-child(1) > div > div.r-sw > div > span',
-    plusCounter1: '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body > div.r.r-type-group > div > div.r-group-items > div:nth-child(1) > div > div.r-counter > div > div.counter-plus',
-    orderCarButton1: '#root > div > div.workflow > div.smart-button-wrapper > button > span.smart-button-main',
-    waitForDriver1: ".order-body",
-    driverInfo1: ".order-btn-group",
+    toggleButtonHelp: '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body > div:nth-child(1) > div > div.r-sw > div > span',
+    plusCounterHelp: '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body > div.r.r-type-group > div > div.r-group-items > div:nth-child(1) > div > div.r-counter > div > div.counter-plus',
+    orderCarButtonHelp: '#root > div > div.workflow > div.smart-button-wrapper > button > span.smart-button-main',
+    waitForDriverHelp: ".order-body",
+    driverInfoHelp: ".order-btn-group",
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
         await fromField.setValue(from);
