@@ -7,6 +7,8 @@ describe('Create an order', () => {
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St'); 
         const selectTypeCar = await $(page.selectCarType);
         await selectTypeCar.click()
+        const selectedCarType = await $(page.supportiveCar);
+        await expect(selectedCarType).toBeEnabled();
     })
     it('should open phone number modal', async () => {
         await browser.url(`/`)
@@ -54,7 +56,8 @@ describe('Create an order', () => {
         const addCardButton = $(page.addCardButton1);
         await addCardButton.waitForDisplayed();
         await addCardButton.click();
-        //the expect for this test is in the page.js file 
+        const mainCardModal = await $(page.creditCardFill);
+        await expect(mainCardModal).toBeExisting();
         await page.submitCreditCard('1234 5678 9000', '14');
     })   
     it('should add a message to the driver', async () => {
@@ -62,6 +65,7 @@ describe('Create an order', () => {
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St'); 
         const messageDriverField = await $('#comment');
         await messageDriverField.setValue('bring some ketchup!');
+        await expect(messageDriverField).toBeExisting();
     }) 
     it('should order a Blanket and handkerchiefs', async () => {
         // await browser.url(`/`)
@@ -78,6 +82,8 @@ describe('Create an order', () => {
         await plusCounter.waitForDisplayed();
         await plusCounter.click();
         await plusCounter.click();
+        const twoCounterCheck = await $(page.twoPlusCounter);
+        await expect(twoCounterCheck).toBeExisting;
     })    
     it('should open the car search modal and wait for driver', async () => {
         const orderCarButton = await $(page.orderCarButtonHelp);
